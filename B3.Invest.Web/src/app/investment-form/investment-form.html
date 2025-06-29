@@ -1,0 +1,56 @@
+<div class="form-container">
+  <h2>Simulador de Investimento</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="investment-form">
+    <div class="form-group">
+      <label for="initialAmount">Valor Inicial</label>
+      <input
+        id="initialAmount"
+        type="number"
+        class="form-control"
+        formControlName="initialAmount"
+        placeholder="Digite o valor inicial"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="months">Meses</label>
+      <input
+        id="months"
+        type="number"
+        class="form-control"
+        formControlName="months"
+        placeholder="Informe o número de meses"
+      />
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+      Calcular
+    </button>
+  </form>
+
+  <div *ngIf="formattedResult" class="alert alert-success">
+    <p><strong>Resultado:</strong></p>
+    <ul style="margin: 0; padding-left: 20px">
+      <li>
+        Valor Bruto: R$ {{ formattedResult.grossAmount | number : "1.2-2" }}
+      </li>
+      <li>
+        Valor Líquido: R$ {{ formattedResult.netAmount | number : "1.2-2" }}
+      </li>
+    </ul>
+  </div>
+  <div
+    *ngIf="validationErrors && (validationErrors | keyvalue).length > 0"
+    class="error-card"
+  >
+    <strong>Erros de validação:</strong>
+    <ul style="margin: 0; padding-left: 20px">
+      <li *ngFor="let entry of validationErrors | keyvalue">
+        <div *ngFor="let message of entry.value">
+          {{ message }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

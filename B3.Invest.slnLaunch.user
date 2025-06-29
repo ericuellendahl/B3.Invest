@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "B3.Invest\\B3.Invest.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "B3.Invest.Web\\B3.Invest.Web.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

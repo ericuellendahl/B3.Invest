@@ -1,0 +1,82 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* altura da tela toda */
+}
+.investment-form {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+.form-container h2 {
+  color: white;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: white;
+}
+input.form-control {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.btn.btn-primary {
+  padding: 12px;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+.btn.btn-primary:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.btn.btn-primary:hover:not(:disabled) {
+  background-color: #357abd;
+}
+.alert-success {
+  margin-top: 20px;
+  color: #fff;
+  background-color: rgba(40, 167, 69, 0.8);
+  padding: 10px 15px;
+  border-radius: 6px;  
+}
+.error-card {
+  width: 396px;
+  padding: 16px;
+  margin-top: 1rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra leve */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
