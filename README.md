@@ -89,10 +89,28 @@ Como este é um projeto único com múltiplos projetos, você pode executar ambo
 
 ## ⚙️ Configurações Importantes
 
+### Build para Produção - Frontend Angular
+
+Para gerar os arquivos otimizados para produção do Angular:
+
+```bash
+cd B3.Investment\B3.Invest.Web
+ng build --configuration production
+```
+
+Os arquivos serão gerados na pasta `dist/` e estarão prontos para deploy em qualquer servidor web.
+
+#### Opções de Deploy:
+
+**1. Servidor Web Tradicional (IIS, Apache, Nginx):**
+- Copie todo o conteúdo da pasta `dist/b3-invest-web/` para o diretório do servidor
+- Configure o servidor para servir arquivos estáticos
+- Configure redirecionamento para `index.html` para suporte ao roteamento Angular
+
 ### Configuração de URL para Docker
 Se você executar a API via Docker, será necessário alterar a URL no projeto Angular:
 
-**Arquivo:** `src/5-www/B3.Invest.Web/src/app/investment.service.ts`
+**Arquivo:** `B3.Investment/B3.Invest.Web/src/app/investment.service.ts`
 
 ```typescript
 // Para execução local
