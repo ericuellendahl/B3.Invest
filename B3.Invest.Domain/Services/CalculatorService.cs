@@ -26,7 +26,11 @@ public class CalculatorService(IOptions<InvestmentTaxSettings> taxSettings) : IC
         var gross = CalculateGross(investment);
         var taxRate = GetTaxRate(investment.Months);
 
-        return Math.Round(gross * (1 - taxRate), 2);
+        var profit = gross - investment.InitialAmount;
+        var tax = profit * taxRate;
+
+        var net = gross - tax;
+        return Math.Round(net, 2);
     }
 
     private decimal GetTaxRate(int months)
