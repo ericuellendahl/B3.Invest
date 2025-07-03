@@ -25,12 +25,16 @@ public class CalculatorService(IOptions<InvestmentTaxSettings> taxSettings) : IC
     {
         var gross = CalculateGross(investment);
         var taxRate = GetTaxRate(investment.Months);
-
-        var profit = gross - investment.InitialAmount;
-        var tax = profit * taxRate;
+        var tax = CalculateTax(gross, investment.InitialAmount, taxRate);
 
         var net = gross - tax;
         return Math.Round(net, 2);
+    }
+
+    private static decimal CalculateTax(decimal gross, decimal initial, decimal taxRate)
+    {
+        var profit = gross - initial;
+        return profit * taxRate;
     }
 
     private decimal GetTaxRate(int months)
