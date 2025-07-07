@@ -2,6 +2,6 @@
 
 public static class CalculatorSettings
 {
-    public const decimal CDI = 0.009M;
-    public const decimal TB = 1.08M;
+    public static readonly decimal CDI = 0.009M;
+    public static readonly decimal TB = 1.08M;
 }
