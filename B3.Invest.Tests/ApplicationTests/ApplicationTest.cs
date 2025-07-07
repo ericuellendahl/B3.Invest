@@ -91,10 +91,7 @@ public class ApplicationTest
                 It.IsAny<Func<It.IsAnyType, Exception, string>>()),
             Times.Once);
     }
-}
 
-public class InvestmentValidatorTests
-{
     [Fact]
     public void Validate_ValidRequest_ReturnsSuccess()
     {
