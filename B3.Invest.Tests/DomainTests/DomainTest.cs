@@ -115,13 +115,13 @@ public class DomainTest
         Assert.NotNull(method);
 
         // Act & Assert for each range
-        Assert.Equal(0.225m, method.Invoke(calculator, new object[] { 1 }));
-        Assert.Equal(0.225m, method.Invoke(calculator, new object[] { 6 }));
-        Assert.Equal(0.20m, method.Invoke(calculator, new object[] { 7 }));
-        Assert.Equal(0.20m, method.Invoke(calculator, new object[] { 12 }));
-        Assert.Equal(0.175m, method.Invoke(calculator, new object[] { 13 }));
-        Assert.Equal(0.175m, method.Invoke(calculator, new object[] { 24 }));
-        Assert.Equal(0.15m, method.Invoke(calculator, new object[] { 25 }));
-        Assert.Equal(0.15m, method.Invoke(calculator, new object[] { 100 }));
+        Assert.Equal(0.225m, method.Invoke(calculator, [1]));
+        Assert.Equal(0.225m, method.Invoke(calculator, [6]));
+        Assert.Equal(0.20m, method.Invoke(calculator, [7]));
+        Assert.Equal(0.20m, method.Invoke(calculator, [12]));
+        Assert.Equal(0.175m, method.Invoke(calculator, [13]));
+        Assert.Equal(0.175m, method.Invoke(calculator, [24]));
+        Assert.Equal(0.15m, method.Invoke(calculator, [25]));
+        Assert.Equal(0.15m, method.Invoke(calculator, [100]));
     }
 }
